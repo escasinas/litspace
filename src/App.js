@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
+// import custom components
+import NavbarMain from './components/NavbarMain';
+import Reading from './pages/Reading';
+import Writing from './pages/Writing';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <NavbarMain />
+        <Routes>
+          <Route path='/' element={<Reading/>} />
+          <Route path='/litspace' element={<Reading/>} />
+          <Route path='/reading' element={<Reading/>} />
+          <Route path='/writing' element={<Writing/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

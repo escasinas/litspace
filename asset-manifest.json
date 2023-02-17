@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/litspace/static/css/main.b2b04915.css",
-    "main.js": "/litspace/static/js/main.baa2583b.js",
+    "main.js": "/litspace/static/js/main.62db9295.js",
     "static/media/bookcase.jpeg": "/litspace/static/media/bookcase.476250417bd81a0ea69b.jpeg",
     "index.html": "/litspace/index.html",
     "main.b2b04915.css.map": "/litspace/static/css/main.b2b04915.css.map",
-    "main.baa2583b.js.map": "/litspace/static/js/main.baa2583b.js.map"
+    "main.62db9295.js.map": "/litspace/static/js/main.62db9295.js.map"
   },
   "entrypoints": [
     "static/css/main.b2b04915.css",
-    "static/js/main.baa2583b.js"
+    "static/js/main.62db9295.js"
   ]
 }

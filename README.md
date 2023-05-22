@@ -1,7 +1,5 @@
 # LitSpace
 
-**No longer maintained**
-
 [escasinas.github.io/litspace](https://escasinas.github.io/litspace)
 
 Todo:

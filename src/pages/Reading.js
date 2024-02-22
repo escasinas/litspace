@@ -66,10 +66,10 @@ function Reading() {
         
         // SUMMARY 
         setLoadingMessage("Generating summary...");
-        const response1 = await openai.createCompletion({
-            model: "text-davinci-003",
+        const response1 = await openai.completions.create({
+            model: "gpt-3.5-turbo-instruct",
             prompt: summarisePrompt,
-            temperature: 0.7,
+            temperature: 1,
             max_tokens: 256,
             top_p: 1,
             frequency_penalty: 0,
@@ -81,7 +81,7 @@ function Reading() {
             setIsLoading(false);
             return;
         });
-        let summaryOutput = response1.data.choices[0].text;
+        let summaryOutput = response1.choices[0].text;
         setSummaryText(summaryOutput);
         
         // input text from summary output
@@ -89,10 +89,10 @@ function Reading() {
         
         // BULLET POINT SUMMARY
         setLoadingMessage("Creating bullet points...");
-        const response2 = await openai.createCompletion({
-            model: "text-davinci-003",
+        const response2 = await openai.completions.create({
+            model: "gpt-3.5-turbo-instruct",
             prompt: bulletPrompt,
-            temperature: 0.7,
+            temperature: 1,
             max_tokens: 256,
             top_p: 1,
             frequency_penalty: 0,
@@ -105,16 +105,16 @@ function Reading() {
             return;
         });
 
-        let bulletOutput = response2.data.choices[0].text.replace(/(\r\n|\n|\r)/gm, "");
+        let bulletOutput = response2.choices[0].text.replace(/(\r\n|\n|\r)/gm, "");
         let bulletArrOutput = bulletOutput.split('• ').slice(1);
         setBulletArr(bulletArrOutput);
         
         // ELI5
         setLoadingMessage("Making an ELI5 explanation...");
-        const response3 = await openai.createCompletion({
-            model: "text-davinci-003",
+        const response3 = await openai.completions.create({
+            model: "gpt-3.5-turbo-instruct",
             prompt: elifivePrompt,
-            temperature: 0.7,
+            temperature: 1,
             max_tokens: 256,
             top_p: 1,
             frequency_penalty: 0,
@@ -126,7 +126,7 @@ function Reading() {
             setIsLoading(false);
             return;
         });
-        let eliOutput = response3.data.choices[0].text;
+        let eliOutput = response3.choices[0].text;
         setEliText(eliOutput);
         
         setIsLoading(false);
